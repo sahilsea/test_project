@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+    <header>
+      <div class="section__container">
+        <div class="header__content">
+          <h1>Travel</h1>
+          <p>
+            Embark on a journey of a lifetime and explore the world's most
+            breathtaking destinations with our expert travel advice. From exotic
+            beaches to cultural wonders, we've got you covered with our
+            comprehensive travel guides and insider tips.
+          </p>
+          <button>Read more</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="journey__container">
+      <div class="section__container">
+        <h2 class="section__title">Start Your Journey</h2>
+        <p class="section__subtitle">The most searched countries in March</p>
+        <div class="journey__grid">
+
+
+          {% for post in posts %}
+            <div class="country__card">
+              <img src="{{ url_for('static', filename= 'assets/' + post.image ) }}" alt="country" />
+              <div class="country__name">
+                <i class="ri-map-pin-2-fill"></i>
+                <span>{{ post.country }}</span>
+              </div>
+            </div>
+          {% endfor %}
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="section__container">
+        <h4>Tourism</h4>
+        <div class="social__icons">
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-twitter-fill"></i></span>
+          <span><i class="ri-instagram-line"></i></span>
+          <span><i class="ri-linkedin-fill"></i></span>
+        </div>
+        <p>
+          Travel makes one modest. You see what a tiny place you occupy in the
+          world.
+        </p>
+      </div>
+    </footer>
+
+{% endblock content %}
